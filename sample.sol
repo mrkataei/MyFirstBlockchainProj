@@ -1,7 +1,7 @@
 pragma solidity ^0.6.0;
 contract SampleStorage {
-    int ds = 0;
-    function set_ds(int _ds) public {
-        ds = _ds;
-    }
+    uint256 favoriteNumber = 5;
+    bool favoriteBool = false;
+    int256 favoriteInt = 4;
+    address favoriteAddress = 0x7756545A;
 }
