@@ -9,6 +9,7 @@ contract SampleStorage {
         string name;
     }
     People public person = People({favoriteNumber:2, name: "kourosh"}); // create object
+    People [] public people; // dynamic array - fix array people[2]
     function store(uint256 _favoriteNumber) public{
         favoriteNumber = _favoriteNumber;
     }
