@@ -17,6 +17,14 @@ contract SampleStorage {
         return favoriteNumber; // read some state - getter function like
     }
     function process(uint256 _favoriteNumber) public pure{
-        favoriteNumber + _favoriteNumber; // not saving state anywhere
+        _favoriteNumber + _favoriteNumber; // not saving state anywhere
+    }
+    function addPerson(string memory _name, uint256 _favoriteNumber) public {
+        people.push(People({favoriteNumber: _favoriteNumber, name: _name}));
+        // push to array
+        // people.push(People({ _favoriteNumber, _name}));
+        // memory , storage  keys for save data on memory(only during the exe contract call)
+        //or storage(data exists after exe on storage) -> for strings because of they are
+        // objects (array of bytes)
     }
 }
