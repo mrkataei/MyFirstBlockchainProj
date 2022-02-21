@@ -9,7 +9,13 @@ contract SampleStorage {
         string name;
     }
     People public person = People({favoriteNumber:2, name: "kourosh"}); // create object
+
     People [] public people; // dynamic array - fix array people[2]
+
+    //mapping
+    mapping(string => uint256) public nameToFavoriteNumber;
+
+
     function store(uint256 _favoriteNumber) public{
         favoriteNumber = _favoriteNumber;
     }
@@ -26,5 +32,6 @@ contract SampleStorage {
         // memory , storage  keys for save data on memory(only during the exe contract call)
         //or storage(data exists after exe on storage) -> for strings because of they are
         // objects (array of bytes)
+        nameToFavoriteNumber[_name] = _favoriteNumber;  // you need map name to numbers (mapping var)
     }
 }
