@@ -12,4 +12,17 @@ contract StorageFactory {
         simpleStorageArray.push(simpleStorage);
 
     }
+    function sfStore(uint _simpleStorageIndex, uint256 _simpleStorageNumber) public{
+        //Address
+        //ABI(application binary interface)
+        // store with address
+        SimpleStorage simpleStorage = SimpleStorage(address(simpleStorageArray[_simpleStorageIndex]));
+        simpleStorage.store(_simpleStorageNumber);
+    }
+    function sfGet(uint256 _simpleStorageIndex) public view returns (uint256){
+        // use view function of simple storage object in simpleStorageArray
+        // we find it with address key each object return it
+        SimpleStorage simpleStorage = SimpleStorage(address(simpleStorageArray[_simpleStorageIndex]));
+        return simpleStorage.retrieve();
+    }
 }
