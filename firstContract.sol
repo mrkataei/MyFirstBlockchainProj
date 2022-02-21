@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.6.0;
-contract SampleStorage {
+contract SimpleStorage {
     //this will get initialized to 0!
     // define var -> type visibility name
     uint256 favoriteNumber;
